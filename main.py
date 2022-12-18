@@ -28,7 +28,7 @@ async def invert(link):
     image_bytes = io.BytesIO(response.content)
     img = PIL.Image.open(image_bytes).convert('RGB')
     img2 = PIL.ImageOps.invert(img)
-    return Response(content="<img src="+link+"></img>")
+    return "<img src="+link+"></img>"
 @app.get("/time")
 def basic_auth(username, password):
     token_valid = 'YWRtaW46YWRtaW4xMjM='  # admin admin123
